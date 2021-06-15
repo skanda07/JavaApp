@@ -1,268 +1,174 @@
 <!DOCTYPE html>
- 
 <html>
- 
 <head>
-    <title>Simple web Development Template</title>
- 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
- 
-        .navbar {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: sticky;
-            top: 0;
-            cursor: pointer;
-        }
- 
-        .background {
-            background: black;
-            background-blend-mode: darken;
-            background-size: cover;
-        }
- 
-        .nav-list {
-            width: 70%;
-            display: flex;
-            align-items: center;
-        }
- 
-        .logo {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
- 
-        .logo img {
-            width: 180px;
-            border-radius: 50px;
-        }
- 
-        .nav-list li {
-            list-style: none;
-            padding: 26px 30px;
-        }
- 
-        .nav-list li a {
-            text-decoration: none;
-            color: white;
-        }
- 
-        .nav-list li a:hover {
-            color: grey;
-        }
- 
-        .rightnav {
-            width: 30%;
-            text-align: right;
-        }
- 
-        #search {
-            padding: 5px;
-            font-size: 17px;
-            border: 2px solid grey;
-            border-radius: 9px;
-        }
- 
-        .firstsection {
-            background-color: green;
-            height: 400px;
-        }
- 
-        .secondsection {
-            background-color: blue;
-            height: 400px;
-        }
- 
-        .box-main {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: black;
-            max-width: 80%;
-            margin: auto;
-            height: 80%;
-        }
- 
-        .firsthalf {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
- 
-        .secondhalf {
-            width: 30%;
-        }
- 
-        .secondhalf img {
-            width: 70%;
-            border: 4px solid white;
-            border-radius: 150px;
-            display: block;
-            margin: auto;
-        }
- 
-        .text-big {
-            font-family: 'Piazzolla', serif;
-            font-weight: bold;
-            font-size: 35px;
-        }
- 
-        .text-small {
-            font-size: 18px;
-        }
- 
-        .btn {
-            padding: 8px 20px;
-            margin: 7px 0;
-            border: 2px solid white;
-            border-radius: 8px;
-            background: none;
-            color: white;
-            cursor: pointer;
-        }
- 
-        .btn-sm {
-            padding: 6px 10px;
-            vertical-align: middle;
-        }
- 
-        .section {
-            height: 400px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            max-width: 90%;
-            margin: auto;
-        }
- 
-        .section-Left {
-            flex-direction: row-reverse;
-        }
- 
-        .paras {
-            padding: 0px 65px;
-        }
- 
-        .thumbnail img {
-            width: 250px;
-            border: 2px solid black;
-            border-radius: 26px;
-            margin-top: 19px;
-        }
- 
-        .center {
-            text-align: center;
-        }
- 
-        .text-footer {
-            text-align: center;
-            padding: 30px 0;
-            font-family: 'Ubuntu', sans-serif;
-            display: flex;
-            justify-content: center;
-            color: white;
-        }
-    </style>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Assessment</title>
+		
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js">
+    </script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script type="text/javascript">
+    	function validate()
+			{
+				var a=document.getElementById('pwd').value;
+				var b=document.getElementById('cpwd').value;
+				if(!(a==b))
+					{
+						alert("Both passwords are not matching");
+						
+					}
+				else{
+					alert('Passwords are matching');
+				}
+			}
+
+    </script>
+
+    <script type="text/javascript">
+
+			function dobValidate() {
+
+			var date= new Date();
+
+			var year=date.getFullYear();
+			year=year-18;
+			var month=date.getMonth()+1;
+			var dd=date.getDate();
+
+			if(month<10)
+			{
+			month='0'+month;
+			}
+			if(dd<10)
+			{
+			dd=0+""+dd;
+			}
+			var y = year-18;
+			document.getElementById('dob').max=year+"-"+month+"-"+dd;
+
+			}
+
+</script>
+
+<script type="text/javascript">
+	
+			type =['Graduation','Postgraduation'];
+
+			data=[['ECE','CSE','EEE'],['MS','MTECH','ME'],];
+
+
+			function fillDD()
+					{
+					var Typedd =document.getElementById('type');
+					for(i=0;i<type.length;i++)
+					{
+					var ele= document.createElement('option');
+					ele.text=type[i];
+					Typedd.add(ele,i+1);
+
+					}
+					}
+
+
+						function fillData()
+						{
+
+						var Typedd =document.getElementById('type');
+						var selectedIdx= Typedd.selectedIndex;
+
+						var Datadd =document.getElementById('data');
+
+						Datadd.innerText=null;
+						var ele=document.createElement('option');
+						ele.text="SELECT";
+						Datadd.add(ele,0);
+
+						for(i=0;i<data[selectedIdx-1].length;i++)
+						{
+						var ele=document.createElement('option');
+						ele.text=data[selectedIdx-1][i];
+						Datadd.add(ele,i+1);
+
+						}
+
+						}
+
+
+
+</script>
+    
 </head>
- 
-<body>
-    <nav class="navbar background">
-        <ul class="nav-list">
-            <div class="logo">
-                <img src= "logo.png">
-            </div>
-            <li><a href="#web">Web Technology</a></li>
-            <li><a href="#program">C Programming</a></li>
-            <li><a href="#course">Courses</a></li>
-        </ul>
- 
-        <div class="rightNav">
-            <input type="text" name="search" id="search">
-            <button class="btn btn-sm">Search</button>
-        </div>
-    </nav>
- 
-    <section class="firstsection">
-        <div class="box-main">
-            <div class="firstHalf">
-                <h1 class="text-big" id="web">Web Technology</h1>
-                <p class="text-small">
-                    HTML stands for HyperText Markup Language.
-                    It is used to design web pages using a markup
-                    language. HTML is the combination of Hypertext
-                    and Markup language. Hypertext defines the
-                    link between the web pages. A markup language
-                    is used to define the text document within tag
-                    which defines the structure of web pages.
-                    HTML is a markup language that is used by the
-                    browser to manipulate text, images, and other
-                    content to display it in the required format.
-                </p>
- 
-            </div>
-        </div>
-    </section>
- 
-    <section class="secondsection">
-        <div class="box-main">
-            <div class="firstHalf">
-                <h1 class="text-big" id="program">
-                    C Programming
-                </h1>
-                <p class="text-small">
-                    C is a procedural programming language. It
-                    was initially developed by Dennis Ritchie
-                    as a system programming language to write
-                    operating system. The main features of C
-                    language include low-level access to memory,
-                    simple set of keywords, and clean style,
-                    these features make C language suitable for
-                    system programming like operating system or
-                    compiler development.
-                </p>
- 
-            </div>
-        </div>
-    </section>
- 
-    <section class="section">
-        <div class="paras">
-            <h1 class="sectionTag text-big">Java</h1>
- 
-            <p class="sectionSubTag text-small">
-                Java has been one of the most popular
-                programming language for many years.
-                Java is Object Oriented. However it is
-                not considered as pure object oriented
-                as it provides support for primitive
-                data types (like int, char, etc) The
-                Java codes are first compiled into byte
-                code (machine independent code). Then
-                the byte code is run on Java Virtual
-                Machine (JVM) regardless of the
-                underlying architecture.
-            </p>
- 
-        </div>
- 
-        <div class="thumbnail">
-            <img src= "img.png" alt="laptop image">
-        </div>
-    </section>
- 
-    <footer class="background">
-        <p class="text-footer">
-            Copyright ©-All rights are reserved
-        </p>
- 
-    </footer>
+<body onload="fillDD()"">
+<div class="container">
+      <div class="row">
+      	<center><h3> REGISTRATION FORM</h3></center>
+      	<br>
+
+      </div>
+       <div class="row">
+       	<div class="col-lg-3 col-md-3 col-sm-5">
+			<div></div>
+		</div>
+
+     <div class="col-lg-6 col-md-6 col-sm-2">
+
+       	<form>
+       				<div class="form-group">
+					    <label>Enter Your Name</label>
+					    <input type="text" class="form-control" id="name"  required>
+					  </div>
+					  
+
+
+					  <div class="form-group">
+					    <label>Enter Your Email</label>
+					    <input type="email" class="form-control" id="email" required>
+					  </div>
+
+					  <div class="form-group">
+					    <label>Enter Your Password</label>
+					    <input type="password" class="form-control" id="pwd" required>
+					  </div>
+
+					  <div class="form-group">
+					    <label>Confirm Your Password</label>
+					    <input type="password" class="form-control" id="cpwd" required>
+					  </div>
+
+					  	<div class="form-group">
+					    <label>Enter Date of Birth</label>
+					    <input type="date" class="form-control" id="dob" onclick="dobValidate()" required>
+					  </div>
+					  
+  						<div class="form-group">
+  							
+  							
+  							<label>Enter Your Education Details</label>
+							<select id="type" class="form-control" onchange="fillData()">
+							<option>Education Level</option>
+							</select>
+							<br>
+							<select id="data" class="form-control">
+							<option>Select Degree</option>
+							</select>
+							
+						</div>
+
+
+
+					  <div class="form-group">
+					  <input type="submit" class="btn btn-default" onclick="validate()" value="Submit">
+					</div>
+		</form>
+	</div>
+	
+
+	<div class="col-lg-3 col-md-3 col-sm-5">
+			<div></div>
+		</div>
+</div>
+</div>
 </body>
- 
 </html>
