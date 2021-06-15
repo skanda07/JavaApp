@@ -1,22 +1,44 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <link rel="stylesheet" href="The Modern College.css">
+   <link rel="stylesheet" href="../all.css">
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="author" content="Suraj Kupate">
+   <title>The Modern College - Pune</title>
+</head>
 <body>
-<h2>Hello World! and World of cloud computing and devops and Big Data Analytics and Machine Learning</h2>
-<div class="w3-container">
-  <h2>London</h2>
-  <p>London is the most populous city in the United Kingdom,
-  with a metropolitan area of over 9 million inhabitants.</p>
-</div>
-
-<article class="w3-container">
-  <h2>Paris</h2>
-  <p>The Paris area is one of the largest population centers in Europe,
-  with more than 2 million inhabitants.</p>
-</article>
-
-<section class="w3-container">
-  <h2>Tokyo</h2>
-  <p>Tokyo is the center of the Greater Tokyo Area,
-  and the most populous metropolitan area in the world.</p>
-</section> 
+   <nav class="navlist">
+      <ul>
+         <li><h4>TMC.</h4></li>
+         <li><a href="">Home</a></li>
+         <li><a href="">About</a></li>
+         <li><a href="">Course</a></li>
+         <li><a href="">Faculty</a></li>
+      </ul>
+   </nav>
+   <div class="main-box">
+      <h1>THE MODERN COLLEGE, PUNE</h1>
+      <p>India's One Of The Best Engeneering College</p>
+      <button>ENROLL NOW</button>
+   </div>
+   <div class="container">
+      <h2>FACILITIES</h2>
+      <div class="row">
+         <div class="column">
+         <a href=""><img src="../images/campus.jpg" alt=""></a>
+         <a href="">CAMPUS</a>
+         </div>
+         <div class="column">
+            <a href=""><img src="../images/cantine.jpg" alt=""></a>
+            <a href="">CANTINE</a>
+         </div>
+         <div class="column">
+            <a href=""><img src="../images/library.jpg" alt=""></a>
+            <a href="">LIBRARY</a>
+         </div>
+      </div>
+   </div>
 </body>
 </html>
